@@ -45,3 +45,15 @@ input:checked + .slider:before {-webkit-transform: translateX(26px);-ms-transfor
 .slider.round:before {border-radius: 50%;}
 .theme label{text-align: center;}
 .editdata{text-align:right;margin-right: 20px;}
+@media screen and (max-width:800px) {
+    .right-colume,.left-colume {
+      width:100%; 
+      
+    }
+    row-padding >.left-colume,.row-padding >.right-colume{padding: 0 0px}
+  }
+/*@media screen and (max-width:300px) {
+    .left-colume {
+      width:100%; 
+    }
+  }*/
