@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style_sheet.css">
     <script src="javascript.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <body class="bg-light-gray" >
     <div class="content margin-top" style="max-width:1400px;">
         <div class="row-padding">
@@ -12,7 +13,7 @@
             <div class="left-colume">
                 <div class="container2 white text-grey card_4">
                     <div class="display-container">
-                        <img src="S__3497987.jpg" style="width:100%" alt="Avatar">
+                        <img onmouseover="opaImg(this)" onmouseout="normalImg(this)" src="S__3497987.jpg" style="width:100%" alt="Avatar">
                         <div class="display-bottomleft container text-black" style="width: 100%;">
                             <b class="large" id="myname">Name : Miss Maneerat Maneeon </b><i class="fa fa-edit icon margin-right large" onclick="editdata()"></i>
                             <h3>Nickname : New</h3>
@@ -27,18 +28,24 @@
                         <hr>
                         <p class="large"><b><i class="fa fa-asterisk icon margin-right text-teal"></i>Skills</b></p>
                         <div id="skill-main">
-                            <p>HTML</p>
-                            <div class="light-grey round-xlarge smalls">
-                                <div class=" center round-xlarge teal" style="width:80%">80%</div>
+                            <div id="HTML">
+                                <p>HTML <i class="icon-remove" onclick="removeskill('HTML')"></i></p>
+                                <div class="light-grey round-xlarge smalls">
+                                    <div class=" center round-xlarge teal" style="width:80%">80%</div>
+                                </div>
                             </div>
-                            <p>CSS</p>
+                            <div id ="CSS">
+                                <p>CSS <i class="icon-remove" onclick="removeskill('CSS')"></i></p>
                                 <div class="light-grey round-xlarge smalls">
                                     <div class="center round-xlarge teal" style="width:70%;">70%</div>
                                 </div>
-                            <p>JAVASCRIPT</p>
-                                <div class="light-grey round-xlarge smalls">
+                            </div>
+                           <div id="JAVASCRIPT">
+                                <p>JAVASCRIPT <i class="icon-remove" onclick="removeskill('JAVASCRIPT')"></i></p>
+                                <div class="light-grey round-xlarge smalls" >
                                     <div class=" center round-xlarge teal" style="width:50%">50%</div>
                                 </div>
+                           </div>
                         </div>
                         <div class="input_skill  margin-right large" >
                             <br>
@@ -48,27 +55,7 @@
                             <button class="btn-primary btn-lg" type="submit" onclick="addskill()">ADD</button>
                         </div>
                         <br>
-                        <!--<p class="large"><b><i class="fa fa-globe icon margin-right text-teal"></i>Languages</b></p>
-                        <div id="languages-main">
-                            <p>THAI</p>
-                                <div class="light-grey round-xlarge smalls">
-                                            <div class=" center round-xlarge teal" style="width:100%">100%</div>
-                                    </div>
-                                    <p>ENGLISH</p>
-                                    <div class="light-grey round-xlarge smalls">
-                                            <div class=" center round-xlarge teal" style="width:70%">70%</div>
-                                    </div>
-                                    </div>
-                                    <div class="input_languages  margin-right large" >
-                                        <br>
-                                            <label class="large text-grey">Add Languages</label><br><br>
-                                            Languages: <input type="text" id="inputLanguages" class="small">
-                                            Percent: <input type="text" id="Percent2" class="small">
-                                            <button class="btn-primary btn-lg" type="submit" onclick="addlanguage()">ADD</button>
-                                        </div>
-                                    <br>-->
-                            </div>
-                        
+                            </div> 
                     </div>
               </div>
               <div class="right-colume">
@@ -103,13 +90,13 @@
                                 <div class=" center round-xlarge teal" style="width:70%">70%</div>
                             </div>
                         </div>
-                        <div class="input_languages  margin-right large text-grey" >
+                        <!--<div class="input_languages  margin-right large text-grey" >
                             <br>
                             <label class="large text-grey">Add Languages</label><br><br>
                             Languages: <input type="text" id="inputLanguages" class="small">
                             Percent: <input type="text" id="Percent2" class="small">
                             <button class="btn-primary btn-lg" type="submit" onclick="addlanguage()">ADD</button>
-                        </div>
+                        </div>-->
                         <br>
                         
                     </div>

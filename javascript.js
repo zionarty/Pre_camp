@@ -1,19 +1,28 @@
 function addskill(){
     let skill = document.getElementById("inputSkill").value
     let percent = Number(document.getElementById("Percent").value)
+    var element = document.getElementById(""+skill+"");
     
     if(skill == "" || percent == ""){
         alert("Please input skill or percent");     
     }else{
+      console.log(element)
+      if(typeof(element) == 'undefined' || element == null)
+      {
         if(percent > 0 && percent <= 100){
             var d1 = document.getElementById('skill-main');
-            d1.insertAdjacentHTML('afterend', '<p>'+skill+'</p><div class="light-grey round-xlarge smalls"><div class=" center round-xlarge teal" style="width:'+percent+'%">'+percent+'%</div></div>');
-        }else{
+            d1.insertAdjacentHTML('afterend', '<div id="'+skill+'"><p>'+skill+' <i class="icon-remove" onclick="removeskill(\''+skill+'\')"></i></p><div class="light-grey round-xlarge smalls" ><div class=" center round-xlarge teal" style="width:50%">50%</div></div></div>');
+            document.getElementById('inputSkill').value = ''
+            document.getElementById('Percent').value = ''
+          }else{
             alert("Please input Percent : Number(1-100)")
         }
+      }else{
+        alert("You have skill already")
+      }
     }
 }
-function addlanguage(){
+/*function addlanguage(){
     let inputLanguages = document.getElementById("inputLanguages").value
     let percent2 = Number(document.getElementById("Percent2").value)
     
@@ -22,13 +31,15 @@ function addlanguage(){
     }else{
         if(percent2 > 0 && percent2 <= 100){
         var d1 = document.getElementById('languages-main');
-        d1.insertAdjacentHTML('afterend', '<p>'+inputLanguages+'</p><div class="light-grey round-xlarge smalls"><div class=" center round-xlarge teal" style="width:'+percent2+'%">'+percent2+'%</div></div>');
-        }else{
+        d1.insertAdjacentHTML('afterend', '<div id ="'+inputLanguages+'"><p>'+inputLanguages+'<i class="icon-remove" onclick="removeskill('+inputLanguages+')"></i></p><div class="light-grey round-xlarge smalls"><div class=" center round-xlarge teal" style="width:'+percent2+'%">'+percent2+'%</div></div></div>');
+        document.getElementById("inputLanguages").value = " "
+        document.getElementById("Percent2").value = " "
+      }else{
             alert("Please input Percent : Number(1-100)")
         }
     }
 
-}
+}*/
 document.addEventListener('DOMContentLoaded', function () {
     var checkbox = document.querySelector('input[id="changetheme"]');
   
@@ -53,4 +64,15 @@ document.addEventListener('DOMContentLoaded', function () {
         myname.innerText = allname;
       }
       
+  }
+  function removeskill(skill){
+    console.log(skill);
+    document.getElementById(skill).remove();
+  }
+  function opaImg(x) {
+    x.style.opacity = "0.2";
+  }
+  
+  function normalImg(x) {
+    x.style.opacity = "1";
   }
